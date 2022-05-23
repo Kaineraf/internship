@@ -1,0 +1,11 @@
+{
+  "name": "internship",
+  "version": "1.0.0",
+  "description": "Уроки по JS",
+  "main": "index.js",
+  "scripts": {
+    "lesson-1": "node ./lesson-1"
+  },
+  "author": "kaineraf",
+  "license": "ISC"
+}
