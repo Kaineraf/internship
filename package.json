@@ -4,7 +4,8 @@
   "description": "Уроки по JS",
   "main": "index.js",
   "scripts": {
-    "lesson-1": "node ./lesson-1"
+    "lesson-1": "node ./lesson-1",
+    "lesson-3": "node ./lesson-3/lottery.js"
   },
   "author": "kaineraf",
   "license": "ISC"

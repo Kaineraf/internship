@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Валидация</title>
+</head>
+<body>
+<label for="string">Введите число</label>
+<input type="text" name="string" id="string">
+<p id="error"></p>
+
+<script>
+    
+    try{
+        let field = document.getElementById('string'),
+            text_error = document.getElementById('error');
+
+        function setHint(text) {
+            text_error.innerHTML = text;
+        }
+
+        field.oninput = function () {
+
+            if (!this.value.trim()){
+                setHint('Поле не может быть пустым');
+                throw new Error('Поле пустое');
+            }
+            if (isNaN(Number(this.value))){
+                setHint('Допустимы только числовые значения');
+                throw new Error('Значение не является числом');
+            }
+            if (Number(this.value) < 5 || Number(this.value) > 10){
+                setHint('Допустимо значение от 5 до 10');
+                throw new Error('Число меньше 5 или больше 10');
+            }
+
+            setHint('Это значение нам подходит!');
+        }
+    }catch (error) {
+        alert(error);
+    }
+
+</script>
+
+</body>
+</html>
